@@ -43,7 +43,7 @@
 
   <main class="container main">
     <section id="right-side" class="row">
-      <aside class="col-sm-6 search-card"> 
+      <aside class="col-sm-6 col-md-8 col-lg-8 search-card"> 
         <h2 class="">Today's Weather :</h2>
       <!-- place to the left -->
         <div class="mb-3"> 
@@ -60,10 +60,10 @@
         <p>history 3</p>
       </aside>
     </section>
-    <section>
-      <section class="col-sm-6">
+    <section id="main-weather-card">
+      <section class="">
         <!-- place to the left -->
-        <h2 id="current-city" class="mb-1 mt-2 bolder"> current city 
+        <h2 id="current-city" class=""> current city 
           <span id="current-date"></span>
         </h2>
         <p id="current-icon">
@@ -74,45 +74,45 @@
         <p id="current-wind">wind speed</p>
       </section>
 
-      <section class="weather-cards col-sm-12">
+      <section class="weather-cards ">
         <!-- 5-Day Forecast: -->
-        <h2 id="previous-weather"> 5-Day Forecast</h2>
-        <article class="row">
+        <h2 id="weekly-weather"> 5-Day Forecast</h2>
+        <article class="row cards-right">
 
-          <figure class="five-cards col-sm-2 bg-light text-dark ml-2 mb-3 p-2 mt-2 rounded">
-          <p id="day-1"></p>
-          <p id="icon-1"></p>
-          <p id="temp-1">temp</p>
-          <p id="humidity-1">humidity</p>
-          <p id="wind-1">wind speed</p>
+          <figure class="five-cards col-sm-2 bg-info text-light rounded">
+            <p id="day-1"></p>
+            <p id="icon-1"></p>
+            <p id="temp-1">temp</p>
+            <p id="humidity-1">humidity</p>
+            <p id="wind-1">wind speed</p>
           </figure>
-          <figure class="five-cards col-sm-2 bg-light text-dark ml-2 mb-3 p-2 mt-2 rounded">
-          <p id="day-2"></p>
-          <p id="icon-2"></p>
-          <p id="temp-2">temp</p>
-          <p id="humidity-2">humidity</p>
-          <p id="wind-2">wind speed</p>
+          <figure class="five-cards col-sm-2 bg-info text-light rounded">
+            <p id="day-2"></p>
+            <p id="icon-2"></p>
+            <p id="temp-2">temp</p>
+            <p id="humidity-2">humidity</p>
+            <p id="wind-2">wind speed</p>
         </figure>
-          <figure class="five-cards col-sm-2 bg-light text-dark ml-2 mb-3 p-2 mt-2 rounded">
-          <p id="day-3"></p>
-          <p id="icon-3"></p>
-          <p id="temp-3">temp</p>
-          <p id="humidity-3">humidity</p>
-          <p id="wind-3">wind speed</p>
+          <figure class="five-cards col-sm-2 bg-info text-light rounded">
+            <p id="day-3"></p>
+            <p id="icon-3"></p>
+            <p id="temp-3">temp</p>
+            <p id="humidity-3">humidity</p>
+            <p id="wind-3">wind speed</p>
           </figure>
-        <figure class="five-cards col-sm-2 bg-light text-dark ml-2 mb-3 p-2 mt-2 rounded">
-          <p id="day-4"></p>
-          <p id="icon-4"></p>
-          <p id="temp-4">temp</p>
-          <p id="humidity-4">humidity</p>
-          <p id="wind-4">wind speed</p>
+        <figure class="five-cards col-sm-2 bg-info text-light rounded">
+            <p id="day-4"></p>
+            <p id="icon-4"></p>
+            <p id="temp-4">temp</p>
+            <p id="humidity-4">humidity</p>
+            <p id="wind-4">wind speed</p>
           </figure>
-          <figure class="five-cards col-sm-2 bg-light text-dark ml-2 mb-3 p-2 mt-2 rounded">
-          <p id="day-5"></p>
-          <p id="icon-5"></p>
-          <p id="temp-5">temp</p>
-          <p id="humidity-5">humidity</p>
-          <p id="wind-5">wind speed</p>
+          <figure class="five-cards col-sm-2 bg-info text-light rounded">
+            <p id="day-5"></p>
+            <p id="icon-5"></p>
+            <p id="temp-5">temp</p>
+            <p id="humidity-5">humidity</p>
+            <p id="wind-5">wind speed</p>
           </figure>
         </article>
       </section>

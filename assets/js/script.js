@@ -1,5 +1,21 @@
 var APIKey = "51ddbf8bf8c2712d3a6ff77d6583fa7f";
+var inputEl = $('#search-input');
+var btnEl = $('#search-btn');
+var history = $('#search-history');
+var city = $('#current-city');
+var iconEl = $('#current-icon');
+var temp = $('#current-temp');
+var humidity = $('#current-humidity');
+var wind = $('#current-wind');
 
+var previousCities = $(JSON.parse(localStorage.getItem('previous')));
+
+
+function searchHistory(){
+  history.children().remove();
+  for(var i = 0; i < previousCities.length; i++){
+  }
+}
 
 function getCity(inputFromField){
   var url="https://api.openweathermap.org/geo/1.0/direct?" + inputFromField + "&limit=1&appid=" + APIKey;

@@ -1,3 +1,6 @@
+:root {
+  --fontcolor: rgb(70, 44, 44);
+}
 *{
   box-sizing: border-box;
 }
@@ -5,18 +8,48 @@
 body {
   font-size: 16px;
   font-family: 'Cormorant', serif;
+  /* background: #e1ecff;
+  background-image: linear-gradient(to left bottom, #d6eef6, #dff0fa, #e7f3fc, #eff6fe, #f6f9ff); */
+  background: url(https://img.freepik.com/premium-photo/colorful-dramatic-sky-with-cloud-sunset_37874-2298.jpg?w=996) no-repeat center;
+  background-size: cover;
+}
+h1, h2 {
+  margin: revert;
+  color: var(--fontcolor);
 }
 
-.main{
+.main {
   display: flex;
   flex-wrap: wrap;
 }
-#search-input{
+#search-input {
   margin-bottom: 1%;
 }
-#search-btn{
+#search-btn {
   margin-bottom: 10%;
 }
-.five-cards{
-  font-size: 14px;
+/* #main-weather-card {
+} */
+#weekly-weather {
+  color: var(--fontcolor);
+  text-shadow: rgb(212, 209, 209) 1px 0 10px;
+  text-align: center;
+  padding: 20px;
+  border: 8px solid;
+  border-image: linear-gradient(to left, #fc2727, rgb(88, 180, 226)) 1 0;
+}
+.cards-right {
+  justify-content: space-evenly;
+}
+.five-cards {
+  flex: 0 0 14.28%;
+  border-right: 1px solid #f2f2f2; 
+  padding: 1rem;
+  text-align: center;
+  justify-content: space-between;
+  /* border: 5px solid; */
+  width:18%;
+  float: left;
+  flex-wrap: wrap;
+  flex-direction: row;
 }

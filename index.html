@@ -38,40 +38,81 @@
 
 <body>
   <header>
-    <h1>Weather Dashboard</h1>
+    <h1 class="">Weather Dashboard</h1>
   </header>
 
-  <main>Container
-    <aside> 
+  <main class="container">
+    <section id="right-side">
+      <aside> 
+        <h2>Today's Weather :</h2>
       <!-- place to the left -->
-      Enter a City
-      <div> search bar
-        <input type="text">
-        <div> <button id="search-btn"></button></div>
-      </div>
-      <ul>search history</ul>
-    </aside>
+        <div> 
+          <!-- search bar -->
+          <input type="text" id="search-input" placeholder="Search a City">
+          <button id="search-btn">Search</button>
+        </div>
+      </aside>
 
-    <section>Current Weather
-      <h2> current city </h2>
-      <p>weather condition</p>
-      <p>temp</p>
-      <p>humidity</p>
-      <p>wind speed</p>
+      <aside id="search-history">
+        <!-- search history -->
+      </aside>
     </section>
 
-    <section>5-Day Forecast:
-      
+
+    <section>
+      <!-- place to the left -->
+      <h2 id="current-city"> current city 
+        <span id="current-date"></span>
+      </h2>
+      <p id="current-icon">
+        <!-- weather condition icon -->
+      </p>
+      <p id="current-temp">temp</p>
+      <p id="current-humidity">humidity</p>
+      <p id="current-wind">wind speed</p>
+    </section>
+
+    <section class="weather-cards">
+      <!-- 5-Day Forecast: -->
+      <h2 id="previous-weather"> 5-Day Forecast</h2>
+      <section class="five-cards">
+        <p id="day-1"></p>
+        <p id="icon-1"></p>
+        <p id="temp-1">temp</p>
+        <p id="humidity-1">humidity</p>
+        <p id="wind-1">wind speed</p>
+      </section>
+      <section class="five-cards">
+        <p id="day-2"></p>
+        <p id="icon-2"></p>
+        <p id="temp-2">temp</p>
+        <p id="humidity-2">humidity</p>
+        <p id="wind-2">wind speed</p>
+      </section>
+      <section class="five-cards">
+        <p id="day-3"></p>
+        <p id="icon-3"></p>
+        <p id="temp-3">temp</p>
+        <p id="humidity-3">humidity</p>
+        <p id="wind-3">wind speed</p>
+      </section>
+      <section class="five-cards">
+        <p id="day-4"></p>
+        <p id="icon-4"></p>
+        <p id="temp-4">temp</p>
+        <p id="humidity-4">humidity</p>
+        <p id="wind-4">wind speed</p>
+      </section>
+      <section class="five-cards">
+        <p id="day-5"></p>
+        <p id="icon-5"></p>
+        <p id="temp-5">temp</p>
+        <p id="humidity-5">humidity</p>
+        <p id="wind-5">wind speed</p>
+      </section>
     </section>
 
   </main>
-
-
-
-
-
-
-
 
   <script 
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 

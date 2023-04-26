@@ -1,23 +1,23 @@
 :root {
-  --fontcolor: rgb(70, 44, 44);
+  --fontcolor: rgb(70, 44, 44, 0.8);
 }
 *{
   box-sizing: border-box;
 }
-
+h1 {
+  background-color: rgb(212, 209, 209, 0.5);
+  height: 100px;
+  padding: 25px;
+}
+h2 {
+  margin-top: 0.5rem;
+}
 body {
-  font-size: 16px;
+  font-size: 24px;
   font-family: 'Cormorant', serif;
-  /* background: #e1ecff;
-  background-image: linear-gradient(to left bottom, #d6eef6, #dff0fa, #e7f3fc, #eff6fe, #f6f9ff); */
-  background: url(https://img.freepik.com/premium-photo/colorful-dramatic-sky-with-cloud-sunset_37874-2298.jpg?w=996) no-repeat center;
+  background: url(https://nordicapis.com/wp-content/uploads/How-to-Build-an-API-Driven-Weather-App.png) no-repeat center;
   background-size: cover;
 }
-h1, h2 {
-  margin: revert;
-  color: var(--fontcolor);
-}
-
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -25,18 +25,23 @@ h1, h2 {
 #search-input {
   margin-bottom: 1%;
 }
-#search-btn {
-  margin-bottom: 10%;
+button {
+  margin-bottom: 5%;
+  margin-top: 4%;
 }
-/* #main-weather-card {
-} */
+#current-forecast {
+  border: 1px solid;
+  border-color: #f2f2f2;
+  background-color: rgb(88, 180, 226, 0.2);
+  margin-top: 2%;
+}
 #weekly-weather {
   color: var(--fontcolor);
   text-shadow: rgb(212, 209, 209) 1px 0 10px;
   text-align: center;
   padding: 20px;
   border: 8px solid;
-  border-image: linear-gradient(to left, #fc2727, rgb(88, 180, 226)) 1 0;
+  border-image: linear-gradient(to left, #ff2323, rgb(88, 180, 226, 0.5)) 1 0;
 }
 .cards-right {
   justify-content: space-evenly;

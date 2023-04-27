@@ -11,10 +11,6 @@ var currentWind = $('#current-wind');
 
 var previousCities = [];
 var weatherApiRootUrl = 'https://api.openweathermap.org/';
-var currentWeatherCallURL = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}';
-var geocodingAPIuRL = 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}';
-// var fiveDayCallURL = 'api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}';
-var fiveDayCallURL = 'api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=';
 
 
 function displayWeather(event) {
@@ -39,13 +35,15 @@ function getWeatherCurrent(city) {
     var iconURL = 'https://openweathermap.org/img/wn/' + weatherIcon + '.png';
 
     var date = new Date(response.dt * 1000).toLocaleDateString();
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;
 
     $(currentCity).html(response.name + '(' + date + ')' + '<img src' + iconURL + '>');
     $(currentTemp).html(response.main.temp + '&#8457');
     $(currentHumidity).html(response.main.humidity + '%');
     $(currentWind).html(response.wind.speed + 'MPH');
 
-    fetchFiveDayForecast(response.id);
+    fetchFiveDayForecast(lat, lon);
     if (response.cod == 200) {
       previousCities = JSON.parse(localStorage.getItem('cityname'));
       console.log(previousCities);
@@ -64,28 +62,11 @@ function getWeatherCurrent(city) {
         }
       }
     }
-    var lat = response.coord.lat;
-    var lon = response.coord.lon;
   })
 }
 
-function getCityCoordinates(inputFromField){
-  
-  var geoURL= weatherApiRootUrl + 'geo/1.0/direct?q=' + inputFromField + '&limit=1&appid=' + APIKey;
-
-  fetch(geoURL)
-  console.log(geoURL)
-    .then((response) => response.json())
-    .then(function (element) {
-      lat = element[0].lat;
-      lon = element[0].lon;
-    })
-    .then(fetchFiveDayForecast);
-}
-
-var fetchFiveDayForecast = function (cityId) {
-  // var fiveDayForecastURL = weatherApiRootUrl + 'data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + APIKey + '&units=imperial'; 
-  var fiveDayForecastURL = weatherApiRootUrl + 'data/2.5/forecast?id=' + cityId + '&appid=' + APIKey + '&units=imperial'; 
+var fetchFiveDayForecast = function (lat, lon) {
+  var fiveDayForecastURL = weatherApiRootUrl + 'data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + APIKey + '&units=imperial'; 
   $.ajax({
     url: fiveDayForecastURL,
     method: 'GET'
@@ -96,7 +77,6 @@ var fetchFiveDayForecast = function (cityId) {
       var iconcode = response.list[((i + 1) * 8) - 1].weather[0].icon;
       var iconurl = 'https://openweathermap.org/img/wn/' + iconcode + '.png';
       var temp = response.list[((i + 1) * 8) - 1].main.temp;
-      // var tempF = (((tempK - 273.5) * 1.80) + 32).toFixed(2);
       var humidity = response.list[((i + 1) * 8) - 1].main.humidity;
 
       $('#day-' + i).html(date);
@@ -120,6 +100,18 @@ function invokePastSearch(event) {
     getWeatherCurrent(city);
   }
 }
+
+$('.clear').on('click', function () {
+  event.preventDefault();
+  if (previousCities.length === 0) {
+  }
+  else {
+      previousCities = [];
+      document.getElementById('search-history').remove();
+      localStorage.removeItem('cityname');
+      location.reload();
+  }
+})
 function loadlastCity() {
   event.preventDefault();
   $('ul').empty();
@@ -133,20 +125,6 @@ function loadlastCity() {
     getWeatherCurrent(city);
   }
 }
-$('.clear').on('click', function () {
-  event.preventDefault();
-  if (previousCities.length === 0) {
-  }
-  else {
-      previousCities = [];
-      document.getElementById('search-history').remove();
-      localStorage.removeItem('cityname');
-      location.reload();
-  }
-  
-})
-
-
 
 $('#search-btn').on('click', displayWeather);
 $('#search-input').keyup(function(event){
@@ -154,6 +132,5 @@ $('#search-input').keyup(function(event){
     $('#search-btn').click();
   }
 });
-// $('.clear').on('click', clearHistory);
 $(document).on('click', invokePastSearch);
 $(window).on('load', loadlastCity);

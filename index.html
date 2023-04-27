@@ -45,15 +45,12 @@
     <section id="right-side" class="row">
       <aside class="col-sm-6 col-lg-8 search-card"> 
         <h2 class="text-center">Search Today's Weather :</h2>
-      <!-- place to the left -->
         <div class="mb-3"> 
-          <!-- search bar input-group mb-4-->
           <input type="text" id="search-input" class="form-control" placeholder="e.x. Philadelphia">
           <button id="search-btn" class="btn btn-sm bg-info text-white fa fa-search "> Search</button>
-          <button type="button" class="clear btn btn-sm bg-info text-white fa fa-search" onclick="clearHistory()">Clear History</button>
+          <button type="button" class="clear btn btn-sm bg-info text-white fa fa-search"">Clear History</button>
         </div>
         <ul id="search-history">
-        <!-- search history -->
         </ul> 
       </aside>
 
@@ -61,12 +58,10 @@
     </section>
     <section id="main-weather-card">
       <section class="text-center rounded" id="current-forecast">
-        <!-- place to the left -->
         <h2 id="current-city" class=""> City Name 
           <span id="current-date"></span>
         </h2>
         <p id="current-icon">
-          <!-- weather condition icon -->
         </p>
         <p > Temp :
           <span id="current-temp"></span>
@@ -80,7 +75,6 @@
       </section>
 
       <section class="weather-cards ">
-        <!-- 5-Day Forecast: -->
         <h2 id="weekly-weather"> 5-Day Forecast</h2>
         <article class="row cards-right">
           <figure class="five-cards bg-info text-light rounded">
